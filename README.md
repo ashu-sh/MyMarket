@@ -1,9 +1,9 @@
 # FlipMart - Flipkart Clone React Application
 
--Clone of Flipkart - React.JS E-commerce Application
--Tools & Technologies used - ReactJS, Context
+- Clone of Flipkart - React.JS E-commerce Application
+- Tools & Technologies used - ReactJS, Context
 
--Application Snapshots
+- Application Snapshots
 ![Screenshot 2023-08-22 181455](https://github.com/ashu-sh/FlipMart_React/assets/102554445/641928e0-e7b1-4d34-b233-8a2bc69dadd9)
 ![Screenshot 2023-08-22 181546](https://github.com/ashu-sh/FlipMart_React/assets/102554445/4e64a008-0dec-4d3a-8fdc-2270acff586f)
 ![Screenshot 2023-08-22 181628](https://github.com/ashu-sh/FlipMart_React/assets/102554445/4fb8754d-f436-460e-a6f3-0a91a8b2e8fa)

@@ -1,9 +1,15 @@
-# Getting Started with Create React App
+# FlipMart - Flipkart Clone React Application
 
 -Clone of Flipkart - React.JS E-commerce Application
 -Tools & Technologies used - ReactJS, Context
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+-Application Snapshots
+![Screenshot 2023-08-22 181455](https://github.com/ashu-sh/FlipMart_React/assets/102554445/641928e0-e7b1-4d34-b233-8a2bc69dadd9)
+![Screenshot 2023-08-22 181546](https://github.com/ashu-sh/FlipMart_React/assets/102554445/4e64a008-0dec-4d3a-8fdc-2270acff586f)
+![Screenshot 2023-08-22 181628](https://github.com/ashu-sh/FlipMart_React/assets/102554445/4fb8754d-f436-460e-a6f3-0a91a8b2e8fa)
+![Screenshot 2023-08-22 181732](https://github.com/ashu-sh/FlipMart_React/assets/102554445/a6161ba3-b2d8-48b3-ad79-179ab554ec49)
+![Screenshot 2023-08-22 181926](https://github.com/ashu-sh/FlipMart_React/assets/102554445/eae9ef1a-1550-429f-9f6a-1de031cf9915)
+
 
 ## Available Scripts
 

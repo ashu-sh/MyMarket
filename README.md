@@ -1,7 +1,7 @@
 # Getting Started with Create React App
 
-- Clone of Flipkart - React.JS E-commerce Application
-- Tools & Technologies used - ReactJS, Context
+-Clone of Flipkart - React.JS E-commerce Application
+-Tools & Technologies used - ReactJS, Context
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 

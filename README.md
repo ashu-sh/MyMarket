@@ -1,8 +1,8 @@
 # FlipMart_React
 
 For Application code Please go here - https://github.com/ashu-sh/FlipMart_React/tree/master
-Clone of Flipkart  - React.JS E-commerce Application
-Tools & Technologies used - ReactJS, Context
+- Clone of Flipkart  - React.JS E-commerce Application
+- Tools & Technologies used - ReactJS, Context
 
 Demo snaps
 ![image](https://github.com/ashu-sh/FlipMart_React/assets/102554445/5a1918aa-7c31-4e9a-9d73-ae150bab20e9)

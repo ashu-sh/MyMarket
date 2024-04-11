@@ -7,10 +7,6 @@ export const cartReducer = (state, action) => {
         ...state,
         cart: state.cart.filter((item) => item !== action.payload),
       };
-    case "SORT_BY_PRICE":
-      return {
-        ...state, products: [...state.products.sort((a, b) => a.price - b.price)],
-      }
     default:
       return state;
   }
@@ -18,3 +14,5 @@ export const cartReducer = (state, action) => {
 export const initialCart = {
   cart: [],
 };
+
+

@@ -9,7 +9,7 @@ import { ProdContext } from "../Store/ProdContext";
 
 function Home() {
   
-  const {Products, loading} = useContext(ProdContext)
+  const { SearchProductFunction, loading } = useContext(ProdContext);
 
 
 
@@ -28,8 +28,8 @@ function Home() {
             </>
           ) : (
             <>
-              {Object.keys(Products).map((id, index) => (
-                <SingleProduct id={id} index={index} key={id} Products={Products} />
+              {Object.keys(SearchProductFunction).map((id, index) => (
+                <SingleProduct id={id} index={index} key={id} SearchProductFunction={SearchProductFunction} />
               ))}
             </>
           )}

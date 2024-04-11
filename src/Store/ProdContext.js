@@ -1,7 +1,8 @@
-import React, { createContext, useState, useEffect } from "react";
+import React, { createContext, useState, useEffect, useReducer } from "react";
 import { ProductDatabase } from "./Config";
 import { storage } from "./Config";
 import { getDownloadURL, ref, uploadBytesResumable } from "firebase/storage";
+
 
 export const ProdContext = createContext();
 
@@ -13,13 +14,13 @@ const initialState = {
   stock: "In stock",
   delivery: "",
   rating: "",
-  qty:"",
+  qty: "",
 };
-
 
 function Context({ children }) {
   const [data, setData] = useState(initialState);
-  const [Products, setProducts] = useState({});
+  const [Products, setProducts] = useState([]);
+  const [searchedProd, SetSearchedProd] = useState("");
   const [file, setFile] = useState(null);
   const [progress, setProgress] = useState(null);
   const [loading, setLoading] = useState(false);
@@ -31,9 +32,8 @@ function Context({ children }) {
   }, [file]);
 
   useEffect(() => {
-    GetProd()
+    GetProd();
   }, []);
-
 
   const uploadProductPhoto = () => {
     const storageRef = ref(storage, file.name);
@@ -87,8 +87,10 @@ function Context({ children }) {
   const GetProd = () => {
     ProductDatabase.child("products").on("value", (snapshot) => {
       if (snapshot.val() !== null) {
-        setProducts({ ...snapshot.val() });
-        // setLoading(true);
+        const Prod = snapshot.val();
+        const ProductsArray = Object.values(Prod);
+
+        setProducts(ProductsArray);
         setLoading(false);
       } else {
         setLoading(true);
@@ -104,6 +106,13 @@ function Context({ children }) {
         : console.log({ message: "success" })
     );
   };
+
+  // Search Products Functionality
+  const SearchProductFunction = Products.filter((prod) => {
+    const searchResults = prod.name.toLowerCase().includes(searchedProd.toLowerCase());
+
+    return searchResults;
+  });
 
 
 
@@ -123,6 +132,9 @@ function Context({ children }) {
           loading,
           data,
           Products,
+          searchedProd,
+          SearchProductFunction,
+          SetSearchedProd,
           setProducts,
           AddProd,
           setData,

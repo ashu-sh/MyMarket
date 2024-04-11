@@ -2,12 +2,17 @@ import React, { useContext } from "react";
 import { MdShoppingCart } from "react-icons/md";
 import { CartProd } from "../reducer/CartContext";
 import { Link } from "react-router-dom";
-// import { ProdContext } from "../Store/ProdContext";
+import { ProdContext } from "../Store/ProdContext";
 
 function Header() {
 
-  // const { data } = useContext(ProdContext);
+  const { searchedProd,SetSearchedProd, } = useContext(ProdContext);
   const { CartQty } = useContext(CartProd);
+
+
+  const HandleProductSearching = (e) => {
+    SetSearchedProd(e.target.value);
+  }
 
 
   return (
@@ -20,6 +25,8 @@ function Header() {
             <input
               className="m-auto w-96 px-4 py-2 outline-none rounded-sm"
               placeholder="Search a Product"
+              value={searchedProd}
+              onChange={HandleProductSearching}
             />
           </div>
           <Link to="/cart">

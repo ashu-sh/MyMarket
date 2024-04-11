@@ -3,13 +3,13 @@ import { CartProd } from "../reducer/CartContext";
 import {Button} from "@mui/material"
 
 
-function SingleProduct({ id, Products }) {
+function SingleProduct({ id, SearchProductFunction }) {
 
   const { dispatch } = useContext(CartProd);
 
 
   const AddToCart = () => {
-    dispatch({ type: "ADD_TO_CART", payload: Products[id] });
+    dispatch({ type: "ADD_TO_CART", payload: SearchProductFunction[id] });
   };
 
 
@@ -17,17 +17,17 @@ function SingleProduct({ id, Products }) {
     <div> 
         <div className="bg-white p-0 shadow-md">
         <img
-          src={Products[id].img}
-          alt={Products[id].name}
+          src={SearchProductFunction[id].img}
+          alt={SearchProductFunction[id].name}
           className="w-full h-48 object-cover mb-1"
         />
         <div className="bg-white p-3  shadow-md" style={{borderRadius:"5px"}}>
-          <h2 className="text-xl font-semibold mb-0">{Products[id].name}</h2>
-          <p className="text-gray-600 mb-3">{Products[id].description}</p>
-          <p className="text-gray-600 mb-1">Best Offer at <strong>₹{Products[id].price}/- per Kg</strong></p>
-          <p className="text-gray-600 mb-1">🛍️Selled by <strong>{Products[id].seller}</strong></p>
-          {/* <p className="text-gray-600 mb-1">🚚Delivery <strong>{Products[id].delivery}</strong></p> */}
-          <p className="text-gray-600 mb-0">⭐<strong>{Products[id].rating}</strong></p>
+          <h2 className="text-xl font-semibold mb-0">{SearchProductFunction[id].name}</h2>
+          <p className="text-gray-600 mb-3">{SearchProductFunction[id].description}</p>
+          <p className="text-gray-600 mb-1">Best Offer at <strong>₹{SearchProductFunction[id].price}/- per Kg</strong></p>
+          <p className="text-gray-600 mb-1">🛍️Selled by <strong>{SearchProductFunction[id].seller}</strong></p>
+          {/* <p className="text-gray-600 mb-1">🚚Delivery <strong>{SearchProductFunction[id].delivery}</strong></p> */}
+          <p className="text-gray-600 mb-0">⭐<strong>{SearchProductFunction[id].rating}</strong></p>
           <div className="flex justify-center items-center">
            
             <Button

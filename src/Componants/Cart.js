@@ -5,13 +5,10 @@ import { CartProd } from "../reducer/CartContext";
 
 
 
-
-
 function Cart() {
 
   const {Cart, dispatch} = useContext(CartProd);
   const [Quantity, setQuantity] = useState(1);
-
 
   const options = Array.from({ length: 10 }, (_, index) => index + 1);
 

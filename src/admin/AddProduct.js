@@ -1,12 +1,11 @@
 import React, { useContext } from "react";
 import "./AddProduct.css";
-import { ProductContext } from "../Store/Context";
+import { ProdContext } from "../Store/ProdContext";
 
 function AddProduct() {
 
-  const { AddProd, data, setData, name, description, price,seller,stock,delivery,rating, qty,setFile,progress } = useContext(ProductContext);
+  const { AddProd, data, setData, name, description, price,seller,stock,delivery,rating, qty,setFile,progress } = useContext(ProdContext);
 
-  
   
   const handleChange = (e) => {
     setData({ ...data, [e.target.name]: e.target.value });
@@ -19,7 +18,6 @@ function AddProduct() {
       await AddProd(data);
     }
   };
-
 
 
   return (

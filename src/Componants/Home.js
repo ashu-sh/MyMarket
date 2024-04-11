@@ -1,30 +1,17 @@
-import React, { useState, useEffect } from "react";
+import React, { useContext } from "react";
 import SingleProduct from "./SingleProduct";
 import "./Home.css";
-// import { ProductContext } from "../Store/Context";
 import MenuButtons from "./MenuButtons";
 import ProdLoader from "../Loader/ProdLoader";
-import { ProductDatabase } from "../Store/Config";
+import { ProdContext } from "../Store/ProdContext";
+
 
 
 function Home() {
-  const [data, setData] = useState({});
-  const [loading, setLoading] = useState(true);
+  
+  const {Products, loading} = useContext(ProdContext)
 
-  useEffect(() => GetProd(), []);
 
-  const GetProd = () => {
-    ProductDatabase.child("products").on("value", (snapshot) => {
-      if (snapshot.val() !== null) {
-        setData({ ...snapshot.val() });
-        // setLoading(true);
-        setLoading(false);
-      } else {
-        setLoading(true);
-        console.log({ message: "error" });
-      }
-    });
-  };
 
   return (
     <div className="home__">
@@ -41,8 +28,8 @@ function Home() {
             </>
           ) : (
             <>
-              {Object.keys(data).map((id, index) => (
-                <SingleProduct id={id} index={index} key={id} data={data} />
+              {Object.keys(Products).map((id, index) => (
+                <SingleProduct id={id} index={index} key={id} Products={Products} />
               ))}
             </>
           )}

@@ -3,33 +3,31 @@ import { CartProd } from "../reducer/CartContext";
 import {Button} from "@mui/material"
 
 
-function SingleProduct({ id, data }) {
+function SingleProduct({ id, Products }) {
 
   const { dispatch } = useContext(CartProd);
 
 
   const AddToCart = () => {
-    dispatch({ type: "ADD_TO_CART", payload: data[id] });
+    dispatch({ type: "ADD_TO_CART", payload: Products[id] });
   };
-  // const RemoveFromCart = () => {
-  //   dispatch({ type: "REMOVE_CART", payload: data[id] });
-  // };
+
 
   return (
     <div> 
         <div className="bg-white p-0 shadow-md">
         <img
-          src={data[id].img}
-          alt={data[id].name}
+          src={Products[id].img}
+          alt={Products[id].name}
           className="w-full h-48 object-cover mb-1"
         />
         <div className="bg-white p-3  shadow-md" style={{borderRadius:"5px"}}>
-          <h2 className="text-xl font-semibold mb-0">{data[id].name}</h2>
-          <p className="text-gray-600 mb-3">{data[id].description}</p>
-          <p className="text-gray-600 mb-1">Best Offer at <strong>₹{data[id].price}/- per Kg</strong></p>
-          <p className="text-gray-600 mb-1">🛍️Selled by <strong>{data[id].seller}</strong></p>
-          {/* <p className="text-gray-600 mb-1">🚚Delivery <strong>{data[id].delivery}</strong></p> */}
-          <p className="text-gray-600 mb-0">⭐<strong>{data[id].rating}</strong></p>
+          <h2 className="text-xl font-semibold mb-0">{Products[id].name}</h2>
+          <p className="text-gray-600 mb-3">{Products[id].description}</p>
+          <p className="text-gray-600 mb-1">Best Offer at <strong>₹{Products[id].price}/- per Kg</strong></p>
+          <p className="text-gray-600 mb-1">🛍️Selled by <strong>{Products[id].seller}</strong></p>
+          {/* <p className="text-gray-600 mb-1">🚚Delivery <strong>{Products[id].delivery}</strong></p> */}
+          <p className="text-gray-600 mb-0">⭐<strong>{Products[id].rating}</strong></p>
           <div className="flex justify-center items-center">
            
             <Button

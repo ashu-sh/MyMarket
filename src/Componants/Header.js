@@ -2,14 +2,13 @@ import React, { useContext } from "react";
 import { MdShoppingCart } from "react-icons/md";
 import { CartProd } from "../reducer/CartContext";
 import { Link } from "react-router-dom";
+// import { ProdContext } from "../Store/ProdContext";
 
 function Header() {
 
-  // const { data } = useContext(ProductContext);
+  // const { data } = useContext(ProdContext);
   const { CartQty } = useContext(CartProd);
 
-
-  
 
   return (
     <div>

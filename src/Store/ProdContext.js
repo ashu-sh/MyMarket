@@ -1,4 +1,4 @@
-import React, { createContext, useState, useEffect, useReducer } from "react";
+import React, { createContext, useState, useEffect} from "react";
 import { ProductDatabase } from "./Config";
 import { storage } from "./Config";
 import { getDownloadURL, ref, uploadBytesResumable } from "firebase/storage";
@@ -89,11 +89,10 @@ function Context({ children }) {
       if (snapshot.val() !== null) {
         const Prod = snapshot.val();
         const ProductsArray = Object.values(Prod);
-
         setProducts(ProductsArray);
         setLoading(false);
       } else {
-        setLoading(true);
+        setLoading(false);
         console.log({ message: "error" });
       }
     });

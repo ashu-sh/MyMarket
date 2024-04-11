@@ -22,7 +22,6 @@ function Context({ children }) {
   const [Products, setProducts] = useState([]);
   const [searchedProd, SetSearchedProd] = useState("");
   const [file, setFile] = useState(null);
-  const [progress, setProgress] = useState(null);
   const [loading, setLoading] = useState(false);
 
   const { name, description, price, seller, stock, delivery, rating, qty } = data;
@@ -40,7 +39,6 @@ function Context({ children }) {
     const uploadTask = uploadBytesResumable(storageRef, file);
 
     uploadTask.on("state_changed", () => {
-      
         getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
           setData((prev) => ({ ...prev, img: downloadURL }));
         });
@@ -107,7 +105,6 @@ function Context({ children }) {
           delivery,
           rating,
           qty,
-          progress,
           loading,
           data,
           Products,

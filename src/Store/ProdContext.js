@@ -39,28 +39,8 @@ function Context({ children }) {
     const storageRef = ref(storage, file.name);
     const uploadTask = uploadBytesResumable(storageRef, file);
 
-    uploadTask.on(
-      "state_changed",
-      (snapshot) => {
-        const progress =
-          (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
-        setProgress(progress);
-
-        switch (snapshot.state) {
-          case "paused":
-            console.log("upload is paused");
-            break;
-          case "running":
-            console.log("upload is running");
-            break;
-          default:
-            break;
-        }
-      },
-      (error) => {
-        console.log(error);
-      },
-      () => {
+    uploadTask.on("state_changed", () => {
+      
         getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
           setData((prev) => ({ ...prev, img: downloadURL }));
         });
